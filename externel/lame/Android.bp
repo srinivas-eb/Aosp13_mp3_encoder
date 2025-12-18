@@ -1,0 +1,44 @@
+cc_library_shared {
+    name: "libmp3lame",
+    vendor_available: true,
+    apex_available: [
+        "//apex_available:platform",
+        "com.android.media.swcodec",
+    ],
+    
+    srcs: ["libmp3lame/*.c"],
+    
+    local_include_dirs: [
+        "include",
+        "libmp3lame",
+        ".",
+    ],
+    
+    export_include_dirs: ["include"],
+    
+    cflags: [
+        "-DLAME_LIBRARY_BUILD",
+        "-Werror",
+        
+        // Tell LAME we have modern ANSI C standard headers and functions
+        "-DSTDC_HEADERS",      // This is the master switch - prevents all old BSD compatibility code
+        "-DHAVE_MEMCPY",       // We have memcpy (not bcopy)
+        "-DHAVE_STRCHR",       // We have strchr (not index/rindex)
+        "-DHAVE_STDINT_H",     // We have stdint.h for int types
+        "-DHAVE_INTTYPES_H",   // We have inttypes.h
+        "-DHAVE_ERRNO_H",      // We have errno.h
+        
+        // Suppress harmless warnings
+        "-Wno-unused-parameter",
+        "-Wno-unused-variable",
+        "-Wno-unused-but-set-variable",
+        "-Wno-unused-but-set-parameter",
+        "-Wno-shift-negative-value",
+        "-Wno-tautological-pointer-compare",
+        "-Wno-macro-redefined",
+        "-Wno-absolute-value",
+    ],
+    min_sdk_version: "29",
+    // Standard C library is already linked by default in AOSP
+    // No need to explicitly link it
+}
