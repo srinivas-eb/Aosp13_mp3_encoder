@@ -1,7 +1,4 @@
-/*
- * Copyright (C) 2025
- * Licensed under the Apache License, Version 2.0
- */
+
 
 #ifndef ANDROID_C2_SOFT_MP3_ENC_H_
 #define ANDROID_C2_SOFT_MP3_ENC_H_
