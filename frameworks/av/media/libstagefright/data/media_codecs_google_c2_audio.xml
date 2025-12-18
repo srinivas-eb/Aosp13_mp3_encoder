@@ -1,0 +1,6 @@
+<MediaCodec name="c2.android.mp3.encoder" type="audio/mpeg">
+    	    <Alias name="OMX.google.mp3.encoder" />
+    	    <Limit name="channe=count" max="2" />
+    	    <Limit name="sample-rate" ranges="8000,12000,16000,24000,32000" />
+    	    <Limit name="bitrate" range="8000-32000" />
+    	</MediaCodec>
