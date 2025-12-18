@@ -27,3 +27,36 @@ cd lame
 make
 This builds the LAME static and shared libraries which are later used
 by the Codec2 MP3 encoder wrapper.
+
+After this add the lame into the AOSP source file
+/externel/
+
+Because externel directory is used to keep the third party sources,
+
+Add the bp file in side the lame directory
+
+below gave the tree
+├── README.md
+├── external/
+│   └── lame/
+│       └── Android.bp
+├── frameworks/
+│   └── av/
+│       ├── media/
+│       │   ├── codec2/
+│       │   │   └── components/
+│       │   │       └── mp3enc/
+│       │   │           ├── Android.bp
+│       │   │           ├── C2SoftMp3Enc.cpp
+│       │   │           └── C2SoftMp3Enc.h
+│       │   └── libstagefright/
+│       │       └── data/
+│       │           ├── media_codecs_sw.xml
+│       │           └── media_codecs_c2_audio.xml
+│       ├── codec2/
+│       │   └── vndk/
+│       │       └── c2store.cpp
+│       └── service/
+│           └── mediacodec/
+│               └── registrant/
+│                   └── Android.bp
