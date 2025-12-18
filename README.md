@@ -71,5 +71,16 @@ frameworks/media/codec2/vndk/c2store.cpp
 
 
 ##for testing you encoder is properly integrated or not.You need to write the testcase.
+ write the .bp file and .cpp with the NdkMediacodec apis.
+
+it will genarate binary file, push this binary file into the system/local/tmp
+using ./ with the binary file name,and give the input and output paths
+ex: ./mp3encodetest /sdcard/input.wav /sdcard/output.mp3
+the above command will store the output file at sdcard.
+
+use adb pull to copy the file from the sdcard to your system.
+ex:adb pull /sdcard/input.mp3.
+
+note:the above two examples are for who using emulator or rpi through adb.
 
 
