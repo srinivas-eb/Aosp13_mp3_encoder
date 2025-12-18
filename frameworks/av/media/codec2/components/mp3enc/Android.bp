@@ -1,0 +1,55 @@
+cc_library_shared {
+    name: "libcodec2_soft_mp3enc",
+    apex_available: [
+        "//apex_available:platform",
+        "com.android.media.swcodec",
+    ],
+    defaults: [
+        "libcodec2_soft-defaults",
+        "libcodec2_soft_sanitize_all-defaults",
+    ],
+
+    srcs: [
+        "C2SoftMp3Enc.cpp",
+    ],
+    
+    header_libs: [
+        "libcodec2_headers",
+        "libstagefright_foundation_headers",
+        "libmedia_headers",
+    ],
+    
+    export_header_lib_headers: [
+        "libcodec2_headers",
+    ],
+    
+    include_dirs: [
+        "frameworks/av/media/codec2/core/include",
+        "frameworks/av/media/codec2/vndk/include",
+        "frameworks/av/media/codec2/components",
+        "frameworks/av/media/libstagefright/include",
+       // "frameworks/av/media/codec2/include",
+        "frameworks/av/media/libstagefright/foundation/include",
+        "frameworks/native/include/media/openmax",
+        "system/core/libcutils/include",
+        "system/core/libutils/include",
+    ],
+    
+    shared_libs: [
+        "libcodec2",
+        "libstagefright_foundation",
+        "liblog",
+        "libutils",
+        "libcutils",
+        "libmp3lame",  // MP3 encoder library
+    ],
+    min_sdk_version: "29",
+
+    cflags: [
+        "-Werror",
+        "-Wall",
+        "-Wno-unused-parameter",
+        "-Wno-unused-variable",
+        "-DLOG_TAG=\"C2SoftMp3Enc\"",
+    ],
+}
