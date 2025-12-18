@@ -34,6 +34,8 @@ After this add the lame into the AOSP source file
 Because externel directory is used to keep the third party sources,
 
 Add the bp file in side the lame directory
+So for the Bp file enable the apex available,
+
 
 below gave the tree
 ├── README.md
@@ -60,3 +62,10 @@ below gave the tree
 │           └── mediacodec/
 │               └── registrant/
 │                   └── Android.bp
+
+
+After completing the build,you will get an (.so) from the mp3enc file directory.
+So add the (.so) at below bp files.
+frameworks/av/service/mediacodec/registrent/Android.bp
+frameworks/media/codec2/vndk/c2store.cpp
+
