@@ -69,3 +69,7 @@ So add the (.so) at below bp files.
 frameworks/av/service/mediacodec/registrent/Android.bp
 frameworks/media/codec2/vndk/c2store.cpp
 
+
+##for testing you encoder is properly integrated or not.You need to write the testcase.
+
+
