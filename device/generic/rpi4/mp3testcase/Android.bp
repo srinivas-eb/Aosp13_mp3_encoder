@@ -1,0 +1,24 @@
+
+// File: Android.bp (in the same directory as mp3_encode_ndk.cpp)
+cc_binary {
+    name: "mp3_encode",
+    srcs: [
+        "Mp3test.cpp",
+    ],
+    shared_libs: [
+        "libmediandk",
+        "liblog",
+    ],
+    cflags: [
+        "-std=c++17",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+    ],
+    // If your component lives on vendor side, mark this as vendor
+    // so it builds/installs under /vendor/bin
+    vendor: true,
+    // optional: install path override
+    // relative_install_path: "media",
+}
+
