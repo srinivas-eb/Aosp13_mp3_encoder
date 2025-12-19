@@ -228,15 +228,15 @@ c2_status_t C2SoftMp3Enc::onFlush_sm() {
 // ==================== Audio Parameter Setup ====================
 
 // Helper to convert C2 MP3 mode to LAME mode
-static MPEG_mode getLameMode(uint32_t channelCount) {
+//static MPEG_mode getLameMode(uint32_t channelCount) {
     // Simple logic: mono for 1 channel, joint stereo for 2 channels
-    ALOGI("getlamemode: channelcount : %d",channelCount);
-    if (channelCount == 1) {
-        return MONO;
-    } else {
-        return JOINT_STEREO;
-    }
-}
+  //  ALOGI("getlamemode: channelcount : %d",channelCount);
+    //if (channelCount == 1) {
+      //  return MONO;
+   // } else {
+     //   return JOINT_STEREO;
+    //}
+//}
 
 status_t C2SoftMp3Enc::setAudioParams() {
     mSampleRate = mIntf->getSampleRate();
